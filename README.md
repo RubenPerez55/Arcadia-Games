@@ -1,12 +1,17 @@
 # 🕹️ Arcadia - Sala de Juegos Web
 
-Colección completa de 16 juegos clásicos programados en **HTML5, CSS3 y JavaScript moderno nativo** (sin dependencias ni frameworks externos).
+Colección completa de 21 juegos clásicos programados en **HTML5, CSS3 y JavaScript moderno nativo** (sin dependencias ni frameworks externos).
 
 ## 🎮 Catálogo de Juegos
 
 | Juego | Categoría | Tipo | Descripción |
 |---|---|---|---|
 | ⚡ **Hardcore Tic-Tac-Toe** | Estrategia | DOM | Gato infinito sin empates: máximo 3 fichas por jugador; al poner la 4ª, tu ficha más antigua se evapora. Con Bot Minimax (Fácil/Medio/Hardcore). |
+| ♠️ **Blackjack 21** | Casino | DOM | Apuesta con fichas, pide carta, plántate o dobla (Double Down) contra el crupier. Blackjack natural paga 3:2. |
+| 🃏 **Video Póker** | Casino | DOM | Póker de 5 cartas (Jacks or Better) con retención de cartas (HOLD), cambio y tabla de premios hasta ×250. |
+| 🎡 **Ruleta Europea** | Casino | Canvas / DOM | Cilindro europeo animado de 37 números y tapete completo (plenos 35:1, docenas 2:1, rojo/negro, par/impar). |
+| 🎰 **Slots 777** | Casino | DOM | Máquina tragamonedas 3×3 con 5 líneas de pago activas (horizontales y diagonales) y bote 777. |
+| 💎 **Minas VIP** | Casino | DOM | Juego de casino estilo Crash/Mines: destapa diamantes multiplicando tu apuesta y retira tus ganancias (Cashout) cuando quieras. |
 | 🐍 **Snake** | Arcade | Canvas 2D | El clásico de la serpiente: come manzanas, crece y esquiva bordes. |
 | 🐔 **Crossy Road** | Arcade | Canvas 2D | Cruza calles con autos y ríos con troncos en un mundo infinito generado proceduralmente. |
 | 🟦 **Tetris** | Puzzle | Canvas 2D | Con bolsa aleatoria de 7 piezas, pieza fantasma y aumento de velocidad por nivel. |

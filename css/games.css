@@ -1186,3 +1186,458 @@
 .httt-rule b { display: block; font-size: 13px; margin-bottom: 2px; }
 .httt-rule p { font-size: 12px; color: var(--muted); line-height: 1.4; }
 
+/* ==========================================================================
+   Juegos de Casino (Blackjack, Video Póker, Ruleta, Slots 777, Minas VIP)
+   ========================================================================== */
+.cas-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 720px;
+  padding: 16px;
+  border-radius: 20px;
+  background: radial-gradient(circle at 50% 30%, #14532d 0%, #092e1a 70%, #061e11 100%);
+  border: 3px solid #854d0e;
+  box-shadow: inset 0 0 40px rgba(0,0,0,.55), 0 18px 40px rgba(0,0,0,.45);
+}
+.cas-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.cas-chip-stat {
+  background: rgba(8, 12, 22, .78);
+  border: 1px solid rgba(250, 204, 21, .35);
+  border-radius: 12px;
+  padding: 6px 14px;
+  min-width: 105px;
+  text-align: center;
+}
+.cas-chip-stat span {
+  display: block;
+  font-size: 10px;
+  color: #fde68a;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+}
+.cas-chip-stat b {
+  font-size: 20px;
+  color: #fff;
+  font-family: monospace;
+}
+.cas-status {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(0,0,0,.45);
+  border: 1px solid rgba(255,255,255,.12);
+  color: #f8fafc;
+}
+.cas-status.win {
+  background: rgba(22, 163, 74, .35);
+  border-color: #4ade80;
+  color: #bbf7d0;
+}
+.cas-status.lose {
+  background: rgba(220, 38, 38, .35);
+  border-color: #f87171;
+  color: #fecaca;
+}
+.cas-status.push {
+  background: rgba(234, 179, 8, .3);
+  border-color: #facc15;
+  color: #fef08a;
+}
+
+.cas-cards {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 104px;
+  align-items: center;
+}
+.cas-placeholder {
+  color: rgba(255,255,255,.45);
+  font-size: 13px;
+  font-style: italic;
+}
+.cas-card {
+  width: 72px;
+  height: 102px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 6px 14px rgba(0,0,0,.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6px;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1;
+  animation: pop .18s ease-out;
+  user-select: none;
+}
+.cas-card.red { color: #dc2626; }
+.cas-card.black { color: #0f172a; }
+.cas-card .tl { align-self: flex-start; text-align: left; }
+.cas-card .mid { align-self: center; font-size: 26px; }
+.cas-card .br { align-self: flex-end; text-align: right; transform: rotate(180deg); }
+.cas-card.back {
+  background: linear-gradient(135deg, #991b1b, #dc2626);
+  border: 2px solid #fca5a5;
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.14) 0 6px, transparent 6px 12px);
+}
+
+.cas-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  background: rgba(8, 12, 22, .68);
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.1);
+}
+.cas-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.cas-lbl {
+  font-size: 12px;
+  color: #cbd5e1;
+  font-weight: 600;
+  margin: 0 4px;
+}
+.chip-btn {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #1e293b;
+  border: 2px dashed #facc15;
+  color: #fef08a;
+  font-weight: 800;
+  font-size: 12px;
+  transition: transform .15s, background .15s;
+}
+.chip-btn:hover:not(:disabled), .chip-btn.on {
+  background: #ca8a04;
+  color: #fff;
+  border-style: solid;
+  transform: translateY(-2px);
+}
+.chip-btn.ghost {
+  border: 1px solid #475569;
+  color: #cbd5e1;
+}
+.chip-btn.gold, .gold-btn {
+  background: linear-gradient(135deg, #f59e0b, #ca8a04);
+  border-color: #fde047;
+  color: #111;
+}
+.cas-main-btn {
+  min-width: 150px;
+}
+
+/* Blackjack */
+.bj-zone {
+  width: 100%;
+  background: rgba(0,0,0,.22);
+  border: 1px dashed rgba(255,255,255,.18);
+  border-radius: 14px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.bj-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: #bbf7d0;
+}
+.bj-label span { color: #fde047; }
+.bj-play-controls { justify-content: center; }
+
+/* Video Póker */
+.pk-paytable {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+  gap: 4px 10px;
+  width: 100%;
+  background: rgba(8, 12, 22, .78);
+  border: 1px solid rgba(250, 204, 21, .35);
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+.pk-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 6px;
+  border-radius: 6px;
+  color: #cbd5e1;
+}
+.pk-row b { color: #facc15; }
+.pk-row small { color: #94a3b8; font-weight: 400; }
+.pk-row.hit {
+  background: #ca8a04;
+  color: #fff;
+  font-weight: 800;
+}
+.pk-row.hit b, .pk-row.hit small { color: #fff; }
+.pk-hand {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 8px 0;
+}
+.pk-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: transform .15s;
+}
+.pk-slot.held { transform: translateY(-8px); }
+.pk-hold-tag {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.45);
+  color: #94a3b8;
+}
+.pk-slot.held .pk-hold-tag {
+  background: #facc15;
+  color: #111;
+  box-shadow: 0 0 12px rgba(250, 204, 21, .6);
+}
+
+/* Ruleta Europea */
+.rl-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.rl-wheel-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.rl-canvas {
+  border-radius: 50%;
+  box-shadow: 0 10px 26px rgba(0,0,0,.6);
+}
+.rl-history {
+  display: flex;
+  gap: 4px;
+  min-height: 24px;
+}
+.rl-pill {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.3);
+}
+.rl-pill.red { background: #dc2626; }
+.rl-pill.black { background: #1e293b; }
+.rl-pill.green { background: #16a34a; }
+
+.rl-felt {
+  flex: 1 1 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.rl-numbers {
+  display: flex;
+  gap: 4px;
+}
+.rl-spot {
+  position: relative;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 6px;
+  padding: 7px 4px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  background: rgba(0,0,0,.35);
+  transition: transform .1s, border-color .15s;
+}
+.rl-spot:hover { border-color: #facc15; transform: scale(1.03); z-index: 2; }
+.rl-spot.red { background: #b91c1c; }
+.rl-spot.black { background: #0f172a; }
+.rl-spot.zero {
+  background: #15803d;
+  width: 34px;
+  display: grid;
+  place-items: center;
+}
+.rl-spot.winner {
+  outline: 3px solid #facc15;
+  box-shadow: 0 0 16px #facc15;
+  z-index: 3;
+}
+.rl-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3px;
+}
+.rl-dozens {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+.rl-outside {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+}
+.rl-chip {
+  position: absolute;
+  top: -6px;
+  right: -4px;
+  background: #facc15;
+  color: #111;
+  font-size: 9px;
+  font-weight: 900;
+  padding: 1px 4px;
+  border-radius: 999px;
+  border: 1px solid #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.5);
+}
+
+/* Slots 777 */
+.sl-machine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.sl-reels {
+  display: grid;
+  grid-template-columns: repeat(3, 86px);
+  gap: 10px;
+  padding: 14px;
+  background: #090d16;
+  border: 3px solid #f59e0b;
+  border-radius: 18px;
+  box-shadow: 0 0 28px rgba(245, 158, 11, .35);
+}
+.sl-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sl-col.spinning .sl-cell {
+  filter: blur(1.5px);
+  transform: scale(0.95);
+}
+.sl-cell {
+  width: 86px;
+  height: 74px;
+  border-radius: 12px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  transition: transform .15s, border-color .2s;
+}
+.sl-cell.win {
+  background: rgba(234, 179, 8, .28);
+  border: 2px solid #facc15;
+  box-shadow: 0 0 16px rgba(250, 204, 21, .7);
+  animation: pulse-disc .5s infinite alternate;
+}
+.sl-pay {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: rgba(8, 12, 22, .78);
+  border: 1px solid rgba(250, 204, 21, .35);
+  border-radius: 14px;
+  padding: 10px 14px;
+  min-width: 170px;
+  font-size: 13px;
+}
+.sl-pay-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.sl-pay-item b { color: #facc15; }
+
+/* Minas VIP (Casino Mines) */
+.cm-board {
+  display: grid;
+  grid-template-columns: repeat(5, 58px);
+  grid-template-rows: repeat(5, 58px);
+  gap: 8px;
+  padding: 12px;
+  background: rgba(8, 12, 22, .8);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.15);
+}
+.cm-cell {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  font-size: 26px;
+  display: grid;
+  place-items: center;
+  transition: transform .12s, background .15s, border-color .15s;
+}
+.cm-cell:hover:not(:disabled) {
+  background: #334155;
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+}
+.cm-cell.gem {
+  background: rgba(16, 185, 129, .28);
+  border-color: #34d399;
+  box-shadow: 0 0 12px rgba(52, 211, 153, .45);
+  animation: pop .2s ease-out;
+}
+.cm-cell.mine {
+  background: rgba(239, 68, 68, .25);
+  border-color: #f87171;
+}
+.cm-cell.boom {
+  background: #dc2626;
+  border-color: #fef08a;
+  animation: shake .35s ease;
+}
+
+

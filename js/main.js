@@ -2,7 +2,7 @@
   const $ = s => document.querySelector(s);
   const hub = $('#hub'), player = $('#player'), grid = $('#grid'), search = $('#search'), chips = $('#chips'), muteBtn = $('#mute');
   const ui = { stage: $('#stage'), score: $('#score'), best: $('#best'), overlay: $('#overlay') };
-  const CATS = { all: 'Todos', arcade: 'Arcade', puzzle: 'Puzzle', estrategia: 'Estrategia', mesa: 'Cartas y dados', palabras: 'Palabras' };
+  const CATS = { all: 'Todos', arcade: 'Arcade', puzzle: 'Puzzle', estrategia: 'Estrategia', mesa: 'Cartas y dados', casino: 'Casino', palabras: 'Palabras' };
   let filter = 'all', current = null, api = null;
 
   /* ---------- Hub ---------- */
