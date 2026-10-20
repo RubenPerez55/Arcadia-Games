@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcadia · Sala de juegos</title>
+  <meta name="description" content="Colección de juegos clásicos hechos con HTML, CSS y JavaScript.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/games.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">🕹️ <span>ARCADIA</span></a>
+    <button class="icon-btn" id="mute" title="Activar / silenciar sonido">🔊</button>
+  </header>
+
+  <main id="hub">
+    <section class="hero">
+      <h1>Elige un juego y <em>a jugar.</em></h1>
+      <p>Clásicos rápidos que corren directo en tu navegador. Tus récords se guardan en este dispositivo.</p>
+    </section>
+    <div class="toolbar">
+      <input id="search" class="search" type="search" placeholder="🔎 Buscar juego…" autocomplete="off">
+      <div id="chips" class="chips"></div>
+    </div>
+    <div id="grid" class="grid"></div>
+  </main>
+
+  <section id="player" hidden>
+    <div class="player-head">
+      <button class="btn ghost" id="back">← Juegos</button>
+      <h2 id="game-title"></h2>
+      <div class="stat"><small>Puntos</small><b id="score">0</b></div>
+      <div class="stat"><small>Récord</small><b id="best">—</b></div>
+      <button class="btn" id="restart">↻ Reiniciar</button>
+    </div>
+    <p class="controls" id="controls"></p>
+    <div class="stage-wrap">
+      <div id="stage" class="stage"></div>
+      <div id="overlay" class="overlay" hidden></div>
+    </div>
+  </section>
+
+  <script src="js/core.js"></script>
+  <script src="js/games/hardcore_ttt.js"></script>
+  <script src="js/games/snake.js"></script>
+  <script src="js/games/crossy.js"></script>
+  <script src="js/games/tetris.js"></script>
+  <script src="js/games/flappy.js"></script>
+  <script src="js/games/breakout.js"></script>
+  <script src="js/games/pong.js"></script>
+  <script src="js/games/tictactoe.js"></script>
+  <script src="js/games/connect4.js"></script>
+  <script src="js/games/hangman.js"></script>
+  <script src="js/games/solitaire.js"></script>
+  <script src="js/games/yatzy.js"></script>
+  <script src="js/games/g2048.js"></script>
+  <script src="js/games/minesweeper.js"></script>
+  <script src="js/games/memory.js"></script>
+  <script src="js/games/simon.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
