@@ -68,7 +68,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: none; backgroun
 .card-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; font-size: 12px; }
 .tag { padding: 3px 8px; border-radius: 6px; background: var(--panel2); color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
 .best-tag { color: #fbbf24; font-weight: 600; }
-.empty { color: var(--muted); padding: 40px; text-align: center; grid-column: 1 / -1; }
+#grid .empty { color: var(--muted); padding: 40px; text-align: center; grid-column: 1 / -1; }
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
 
 /* ---------- Reproductor ---------- */

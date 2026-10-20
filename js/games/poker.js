@@ -116,7 +116,7 @@
         slots.forEach((el, i) => {
           const c = hand[i];
           if (!c) {
-            el.className = 'pk-slot empty';
+            el.className = 'pk-slot is-empty';
             el.innerHTML = `<div class="cas-card back"></div>`;
             return;
           }

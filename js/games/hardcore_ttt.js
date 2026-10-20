@@ -404,7 +404,7 @@
           cell.disabled = botThinking || val !== null || isGameOver;
           cell.className = [
             'httt-cell',
-            val ? 'filled ' + val.toLowerCase() : 'empty',
+            val ? 'filled ' + val.toLowerCase() : 'is-empty',
             isNextVanish ? 'vanishing' : '',
             isWin ? 'win-cell' : '',
           ].filter(Boolean).join(' ');
